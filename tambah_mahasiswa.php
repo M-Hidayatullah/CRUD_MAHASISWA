@@ -67,6 +67,10 @@
           <input type="text" name="nama" autofocus="" required="" />
         </div>
         <div>
+          <label>Email</label>
+          <input type="email" name="email"/>
+        </div>
+        <div>
           <label>Nim</label>
          <input type="number" name="nim" />
         </div>

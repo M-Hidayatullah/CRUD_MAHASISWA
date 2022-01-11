@@ -48,13 +48,14 @@
   </head>
   <body>
     <center><h1>Data Mahasiswa</h1><center>
-    <center><a href="tambah_mahasiswa.php">+ &nbsp; Tambah Mahasiswa</a><center>
+      <center> <a href="tambah_mahasiswa.php">+ &nbsp; Tambah Mahasiswa</a></center>
     <br/>
     <table>
       <thead>
         <tr>
           <th style="text-align: center;">No</th>
           <th style="text-align: center;">Nama</th>
+          <th style="text-align: center;">Email</th>
           <th style="text-align: center;">Nim</th>
           <th style="text-align: center;">Prodi</th>
           <th style="text-align: center;">Gambar</th>
@@ -82,12 +83,14 @@
        <tr>
           <td><?php echo $no; ?></td>
           <td><?php echo $row['nama']; ?></td>
+          <td><?php echo $row['email']; ?></td>
           <td><?php echo $row['nim']; ?></td>
           <td><?php echo$row['prodi']; ?></td>
           <td style="text-align: center;"><img src="gambar/<?php echo $row['gambar']; ?>" style="width: 120px;"></td>
-          <td>
+          <td style="text-align: center;">
+              <a href="tambah_mahasiswa.php">+ &nbsp; Tambah</a> |
               <a href="edit_mahasiswa.php?id= <?php echo $row['id']; ?>">Edit</a> |
-              <a href="edit_mahasiswa.php?id=<?php echo $row['id']; ?>">Edit</a> |
+              <a href="detail_mahasiswa.php?id=<?php echo $row['id']; ?>">Detail</a> |
               <a href="proses_hapus.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Anda yakin akan menghapus data ini?')">Hapus</a>
           </td>
       </tr>

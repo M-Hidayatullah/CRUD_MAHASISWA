@@ -92,6 +92,10 @@ include 'koneksi.php';
           <?php echo $data['nama']; ?>
         </div>
         <div>
+          <label>Email</label>
+          <?php echo $data['email']; ?>
+        </div>
+        <div>
           <label>Nim</label>
          <?php echo $data['nim']; ?>
         </div>

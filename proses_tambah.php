@@ -4,6 +4,7 @@ include 'koneksi.php';
 
 	// membuat variabel untuk menampung data dari form
   $nama   = $_POST['nama'];
+  $email   = $_POST['email'];
   $nim     = $_POST['nim'];
   $prodi    = $_POST['prodi'];
   $gambar = $_FILES['gambar']['name'];
@@ -20,7 +21,7 @@ if($gambar != "") {
         if(in_array($ekstensi, $ekstensi_diperbolehkan) === true)  {     
                 move_uploaded_file($file_tmp, 'gambar/'.$nama_gambar_baru); //memindah file gambar ke folder gambar
                   // jalankan query INSERT untuk menambah data ke database pastikan sesuai urutan (id tidak perlu karena dibikin otomatis)
-                  $query = "INSERT INTO mahasiswa (nama, nim, prodi, gambar) VALUES ('$nama', '$nim', '$prodi', '$nama_gambar_baru')";
+                  $query = "INSERT INTO mahasiswa (nama, email, nim, prodi, gambar) VALUES ('$nama', '$email', '$nim', '$prodi', '$nama_gambar_baru')";
                   $result = mysqli_query($koneksi, $query);
                   // periska query apakah ada error
                   if(!$result){
@@ -37,7 +38,7 @@ if($gambar != "") {
                 echo "<script>alert('Ekstensi gambar yang boleh hanya jpg atau png.');window.location='tambah_mahasiswa.php';</script>";
             }
 } else {
-   $query = "INSERT INTO mahasiswa (nama, nim, prodi, gambar) VALUES ('$nama', '$nim', '$prodi', null)";
+   $query = "INSERT INTO mahasiswa (nama, email, nim, prodi, gambar) VALUES ('$nama', '$email', '$nim', '$prodi', null)";
                   $result = mysqli_query($koneksi, $query);
                   // periska query apakah ada error
                   if(!$result){

@@ -89,6 +89,10 @@ include 'koneksi.php';
           <input type="text" name="nama" value="<?php echo $data['nama']; ?>" autofocus="" required="" />
         </div>
         <div>
+          <label>Email</label>
+          <input type="email" name="email" value="<?php echo $data['email']; ?>"/>
+        </div>
+        <div>
           <label>Nim</label>
          <input type="text" name="nim" value="<?php echo $data['nim']; ?>" />
         </div>

@@ -24,6 +24,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `mahasiswa` (
   `id` int(11) NOT NULL,
   `nama` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
   `nim` int(255) DEFAULT NULL,
   `prodi` varchar(255) DEFAULT NULL,
   `gambar` varchar(255) DEFAULT NULL
@@ -33,9 +34,9 @@ CREATE TABLE `mahasiswa` (
 -- Dumping data untuk tabel `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`id`, `nama`, `nim`, `prodi`, `gambar`) VALUES
-(1, 'Dayat', 1901010263, 'ilkom', '489-contoh.jpg'),
-(4, 'Deo', 1901010265, 'ilkom', '489-contoh.jpg');
+INSERT INTO `mahasiswa` (`id`, `nama`, `email`,  `nim`, `prodi`, `gambar`) VALUES
+(1, 'Dayat', 'dayat@gmail.com', 1901010263, 'ilkom', '489-contoh.jpg'),
+(4, 'Deo', 'deo@gmail.com', 1901010265, 'ilkom', '489-contoh.jpg');
 
 --
 -- Indexes for dumped tables

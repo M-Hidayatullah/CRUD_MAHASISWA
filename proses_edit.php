@@ -5,6 +5,7 @@ include 'koneksi.php';
 	// membuat variabel untuk menampung data dari form
   $id = $_POST['id'];
   $nama   = $_POST['nama'];
+  $email   = $_POST['email'];
   $nim     = $_POST['nim'];
   $prodi    = $_POST['prodi'];
   $gambar_mhs = $_FILES['gambar']['name'];
@@ -20,7 +21,7 @@ include 'koneksi.php';
                   move_uploaded_file($file_tmp, 'gambar/'.$nama_gambar_baru); //memindah file gambar ke folder gambar
                       
                     // jalankan query UPDATE berdasarkan ID yang  kita edit
-                   $query  = "UPDATE mahasiswa SET nama = '$nama', nim = '$nim', prodi = '$prodi',  gambar = '$nama_gambar_baru'";
+                   $query  = "UPDATE mahasiswa SET nama = '$nama', email='$email', nim = '$nim', prodi = '$prodi',  gambar = '$nama_gambar_baru'";
                     $query .= "WHERE id = '$id'";
                     $result = mysqli_query($koneksi, $query);
                     // periska query apakah ada error
@@ -38,7 +39,7 @@ include 'koneksi.php';
               }
     } else {
       // jalankan query UPDATE berdasarkan ID yang mhs kita edit
-      $query  = "UPDATE mahasiswa SET nama = '$nama', nim = '$nim', prodi = '$prodi'";
+      $query  = "UPDATE mahasiswa SET nama = '$nama', email='$email', nim = '$nim', prodi = '$prodi'";
       $query .= "WHERE id = '$id'";
       $result = mysqli_query($koneksi, $query);
       // periska query apakah ada error
